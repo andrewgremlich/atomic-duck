@@ -10,11 +10,11 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="author" content="{{ .Site.Author }}" />
     <link rel="shortcut icon" type="image/x-icon" href="/icons/{{ .Site.Params.favicon }}">
 
-    <meta name="theme-color" content="#043e11">
+    <!-- <meta name="theme-color" content="#043e11">
     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
@@ -34,7 +34,7 @@
     <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" /> -->
 
     <link rel="manifest" href="/manifest.json">
 
@@ -43,15 +43,10 @@
     {{ end -}}
   
     <!-- CSS -->
-    {{ $globalStyle := resources.Get "css/global.css" }}
-    {{ $headerStyle := resources.Get "css/header.css" }}
-    {{ $homepageStyle := resources.Get "css/homepage.css" }}
-    {{ $postsListStyle := resources.Get "css/postsList.css" }}
-    {{ $postContentStyle := resources.Get "css/postContent.css" }}
-    {{ $footerStyle := resources.Get "css/footer.css" }}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.bundle.css" />
 
-    {{ $css := slice $globalStyle $headerStyle $postsListStyle $footerStyle $postContentStyle $homepageStyle | resources.Concat "css/bundle.css" | resources.PostCSS | resources.Minify | resources.Fingerprint "sha256" }}
-
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ range .Site.Params.custom_css -}}
+        <link rel="stylesheet" href="{{ . | absURL }}">
+    {{- end }}
 
   </head>

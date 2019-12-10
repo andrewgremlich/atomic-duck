@@ -1,25 +1,20 @@
-<div id="subscribeArea">
-    <input id="emailInput" type="email" placeholder="Subscribe by email!" />
-    <input id="emailButton" type="button" value="Subscribe!" />
-</div>
-
 <footer>
     <p class="other-links">
-        <label>
-            <a href="https://gremlich.dev/" rel="noopener">Development Blog</a>
-        </label>
-        <label>
-            <a href="https://gremlich.xyz/" rel="noopener">Creative Writing</a>
-        </label>
+        {{ with .Site.Params.linkedin }}
         <label>
             <a href="https://www.linkedin.com/in/agremlich/" rel="noopener">LinkedIn</a>
         </label>
+        {{ end }}
+        {{ with .Site.Params.github }}
         <label>
             <a href="https://github.com/andrewgremlich" rel="noopener">Github</a>
         </label>
+        {{ end }}
+        {{ with .Site.Params.twitter }}
         <label>
             <a href="https://twitter.com/AndrewGremlich" rel="noopener">Twitter</a>
         </label>
+        {{ end }}
     </p>
     <p>Subscribe via <a href="/index.xml">RSS</a>!</p>
     <p>
@@ -41,10 +36,11 @@
     }
 </script>
 
+<!-- JS -->
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.bundle.css" />
+
 <!-- custom js -->
-{{ $instantJS := resources.Get "js/instant.js" }}
-{{ $subscription := resources.Get "js/email-subscription.js" }}
+{{ range .Site.Params.custom_js -}}
+    <script src="{{ . | absURL }}"></script>
+{{- end }}
 
-{{ $js := slice $instantJS $subscription | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
-
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
