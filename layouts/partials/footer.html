@@ -36,9 +36,6 @@
     }
 </script>
 
-<!-- JS -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.bundle.css" />
-
 <!-- custom js -->
 {{ range .Site.Params.custom_js -}}
     <script src="{{ . | absURL }}"></script>
