@@ -1,10 +1,7 @@
-{{ $avatarImage := resources.Get "img/avatar.jpg" }}
-{{ $resizeImage := $avatarImage.Resize "100x q90" }}
-
 <header>
     <nav id="siteNav">
         <a href="/">Home</a>
     </nav>
     
-    <img src="{{ $resizeImage.RelPermalink }}" alt="Avatar Image for {{ .Site.Author }}" title="Avatar Image for {{ .Site.Author }}" />
+    <img src="{{ .Site.BaseURL }}img/avatar.jpg" alt="Avatar Image for {{ .Site.Author }}" title="Avatar Image for {{ .Site.Author }}" />
 </header>

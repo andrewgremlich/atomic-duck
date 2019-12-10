@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="author" content="{{ .Site.Author }}" />
-    <link rel="shortcut icon" type="image/x-icon" href="/icons/{{ .Site.Params.favicon }}">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="/icons/{{ .Site.Params.favicon }}"> -->
 
     <!-- <meta name="theme-color" content="#043e11">
     <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
@@ -36,7 +36,7 @@
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" /> -->
 
-    <link rel="manifest" href="/manifest.json">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
 
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

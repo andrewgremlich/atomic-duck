@@ -129,7 +129,8 @@ header nav {
 header img {
         border-radius: 100px;
         box-shadow: var(--box-shadow);
-        display: none
+        display: none;
+        width: 100px
     }
 @media (min-width: 385px) {
 header img {

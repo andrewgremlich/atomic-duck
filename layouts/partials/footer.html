@@ -2,18 +2,25 @@
     <p class="other-links">
         {{ with .Site.Params.linkedin }}
         <label>
-            <a href="https://www.linkedin.com/in/agremlich/" rel="noopener">LinkedIn</a>
+            <a href="{{ . }}" rel="noopener">LinkedIn</a>
         </label>
         {{ end }}
         {{ with .Site.Params.github }}
         <label>
-            <a href="https://github.com/andrewgremlich" rel="noopener">Github</a>
+            <a href="{{ . }}" rel="noopener">Github</a>
         </label>
         {{ end }}
         {{ with .Site.Params.twitter }}
         <label>
-            <a href="https://twitter.com/AndrewGremlich" rel="noopener">Twitter</a>
+            <a href="{{ . }}" rel="noopener">Twitter</a>
         </label>
+        {{ end }}
+        {{ with .Site.Params.addtional_urls }}
+            {{ range . }}
+                <label>
+                    <a href="{{ .url }}" rel="noopener">{{ .name }}</a>
+                </label>
+            {{ end }}
         {{ end }}
     </p>
     <p>Subscribe via <a href="/index.xml">RSS</a>!</p>
@@ -23,18 +30,16 @@
     </p>
 </footer>
 
-{{ $sw := resources.Get "js/sw.js" | resources.Fingerprint "sha512" }}
-
-<script>
+<!-- <script>
     if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-            .register("{{ $sw.RelPermalink }}")
+            .register("")
             .then(registration => {
                 console.log("service worker registered!");
             })
             .catch(err => console.error("SW failure...  :(", err));
     }
-</script>
+</script> -->
 
 <!-- JS -->
 <script src="{{ .Site.BaseURL }}js/instant.js"></script>

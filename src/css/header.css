@@ -16,6 +16,7 @@ header {
         border-radius: 100px;
         box-shadow: var(--box-shadow);
         display: none;
+        width: 100px;
 
         @media (min-width: 385px) {
             margin-top: 20px;
