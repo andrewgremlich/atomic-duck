@@ -1,0 +1,22 @@
+{{ define "main"}}
+    <main id="postContent">
+        <article>
+            <h1>{{ .Title }}</h1>
+        
+            <h3>
+                {{ if .Params.Author }}
+                    {{ .Params.Author }}
+                {{else}}
+                    {{ .Site.Params.Author }}
+                {{ end }}
+            </h3>
+        
+            {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
+            <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
+            
+            <section>
+                {{ .Content }}
+            </section>
+        </article>
+    </main>
+{{ end }}

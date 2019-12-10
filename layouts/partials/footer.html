@@ -1,0 +1,50 @@
+<div id="subscribeArea">
+    <input id="emailInput" type="email" placeholder="Subscribe by email!" />
+    <input id="emailButton" type="button" value="Subscribe!" />
+</div>
+
+<footer>
+    <p class="other-links">
+        <label>
+            <a href="https://gremlich.dev/" rel="noopener">Development Blog</a>
+        </label>
+        <label>
+            <a href="https://gremlich.xyz/" rel="noopener">Creative Writing</a>
+        </label>
+        <label>
+            <a href="https://www.linkedin.com/in/agremlich/" rel="noopener">LinkedIn</a>
+        </label>
+        <label>
+            <a href="https://github.com/andrewgremlich" rel="noopener">Github</a>
+        </label>
+        <label>
+            <a href="https://twitter.com/AndrewGremlich" rel="noopener">Twitter</a>
+        </label>
+    </p>
+    <p>Subscribe via <a href="/index.xml">RSS</a>!</p>
+    <p>
+        &copy; {{ .Site.Params.publicationYear }} {{ .Site.Params.Author }}. Powered by
+        <a href="https://gohugo.io/">Hugo</a>.
+    </p>
+</footer>
+
+{{ $sw := resources.Get "js/sw.js" | resources.Fingerprint "sha512" }}
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("{{ $sw.RelPermalink }}")
+            .then(registration => {
+                console.log("service worker registered!");
+            })
+            .catch(err => console.error("SW failure...  :(", err));
+    }
+</script>
+
+<!-- custom js -->
+{{ $instantJS := resources.Get "js/instant.js" }}
+{{ $subscription := resources.Get "js/email-subscription.js" }}
+
+{{ $js := slice $instantJS $subscription | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
+
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

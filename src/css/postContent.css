@@ -1,0 +1,50 @@
+main {
+    &#postContent {
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 385px) {
+            margin-top: 200px;  
+        }
+
+        @media (min-width: 500px) {
+            margin-top: 50px;
+        }
+
+        & p {
+            margin-bottom: 20px;
+        }
+
+        & ul {
+            margin-left: 25px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        & ul a {
+            font-size: 14px;
+        }
+
+        & img {
+            width: 100%;
+        }
+
+        & blockquote {
+            border-left: 2px solid var(--faded-black);
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+        
+        & article {
+            margin-left: 10px;
+
+            @media (min-width: 850px) {
+                width: 40%;
+            }
+        }
+    }
+}

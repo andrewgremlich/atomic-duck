@@ -1,0 +1,10 @@
+{{ $avatarImage := resources.Get "img/avatar.jpg" }}
+{{ $resizeImage := $avatarImage.Resize "100x q90" }}
+
+<header>
+    <nav id="siteNav">
+        <a href="/">Home</a>
+    </nav>
+    
+    <img src="{{ $resizeImage.RelPermalink }}" alt="Avatar Image for Andrew Gremlich" title="Avatar Image for Andrew Gremlich" />
+</header>
