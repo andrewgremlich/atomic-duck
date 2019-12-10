@@ -36,6 +36,9 @@
     }
 </script>
 
+<!-- JS -->
+<script src="{{ .Site.BaseURL }}js/instant.js"></script>
+
 <!-- custom js -->
 {{ range .Site.Params.custom_js -}}
     <script src="{{ . | absURL }}"></script>
