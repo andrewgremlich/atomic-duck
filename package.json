@@ -4,7 +4,7 @@
   "description": "A minimalist theme for Hugo SSG",
   "main": "index.js",
   "scripts": {
-    "build:css": "cat src/css/*.css | postcss --use autoprefixer --no-map > static/css/main.bundle.css"
+    "build:css": "cat src/css/*.css | postcss --no-map > static/css/main.bundle.css"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.3",
     "postcss-cli": "^6.1.3",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-preset-env": "^6.7.0",
+    "sugarss": "^2.0.0"
   }
 }
