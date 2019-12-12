@@ -2,9 +2,13 @@
 {{ $descText := .Get "desc" }}
 {{ $size := .Get "size" }}
 {{ $quality := .Get "quality" }}
+{{ $caption := .Get "caption" }}
 
 {{ $original := .Page.Resources.GetMatch (printf "*%s*" $imageFilePath) }}
 
 {{ $modOriginal := $original.Resize (printf "%s %s" $size $quality) }}
 
-<img src="{{ $modOriginal.RelPermalink }}" title="{{ $descText }}" alt="{{ $descText }}" />
+<figure>
+    <img src="{{ $modOriginal.RelPermalink }}" title="{{ $descText }}" alt="{{ $descText }}" />
+    <figcaption>{{ $caption }}</figcaption>
+</figure>

@@ -192,8 +192,9 @@ main#postContent ul {
 main#postContent ul a {
             font-size: 14px;
         }
-main#postContent img {
+main#postContent figure {
             width: 100%;
+            margin-bottom: 20px;
         }
 main#postContent blockquote {
             border-left: 2px solid var(--faded-black);
