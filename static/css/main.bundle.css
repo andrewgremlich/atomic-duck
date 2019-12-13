@@ -161,7 +161,6 @@ main ul, main li {
 main p {
         margin-bottom: 16px;
         max-width: 600px;
-        color: #3a3a3a;
     }
 main#postContent {
         height: auto;
@@ -188,6 +187,12 @@ main#postContent {
 main#postContent p {
             margin-bottom: 20px;
             color: var(--theme-p);
+        }
+main#postContent pre {
+            padding: 10px;
+            border-radius: 5px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
         }
 main#postContent ul {
             margin-left: 25px;

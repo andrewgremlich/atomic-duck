@@ -20,6 +20,13 @@ main {
             color: var(--theme-p);
         }
 
+        & pre {
+            padding: 10px;
+            border-radius: 5px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+        } 
+
         & ul {
             margin-left: 25px;
             margin-bottom: 25px;

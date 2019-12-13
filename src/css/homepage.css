@@ -15,6 +15,5 @@ main {
     & p {
         margin-bottom: 16px;
         max-width: 600px;
-        color: #3a3a3a;
     }
 }
