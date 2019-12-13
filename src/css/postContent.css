@@ -8,7 +8,7 @@ main {
         align-items: center;
 
         @media (min-width: 385px) {
-            margin-top: 200px;  
+            margin-top: 200px;
         }
 
         @media (min-width: 500px) {
@@ -17,6 +17,7 @@ main {
 
         & p {
             margin-bottom: 20px;
+            color: var(--theme-p);
         }
 
         & ul {
@@ -44,7 +45,7 @@ main {
             padding-left: 20px;
             margin-left: 10px;
         }
-        
+
         & article {
             margin-left: 10px;
             margin-right: 10px;

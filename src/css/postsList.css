@@ -17,6 +17,7 @@ main {
     }
 
     & p.date {
+        color: var(--theme-p);
         margin-bottom: 25px;
     }
 

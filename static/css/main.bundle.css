@@ -36,6 +36,7 @@ footer p,
         margin: 0px;
         margin-bottom: 5px;
         font-size: 14px;
+        color: var(--theme-p);
     }
 
 footer a {
@@ -61,11 +62,11 @@ body {
 }
 
 body {
-    background: var(--theme-white);
+    background: var(--theme-background);
 }
 
 h1 {
-    color: var(--theme-black);
+    color: var(--theme-h1);
     margin-bottom: 10px;
 }
 
@@ -83,7 +84,7 @@ h2 {
 
 p {
     font-size: 20px;
-    color: var(--theme-black);
+    color: var(--theme-p);
 }
 
 a {
@@ -154,6 +155,9 @@ main#homepage {
 main h1 {
         margin-bottom: 16px;
     }
+main ul, main li {
+        list-style: none;
+    }
 main p {
         margin-bottom: 16px;
         max-width: 600px;
@@ -174,7 +178,7 @@ main#postContent {
 @media (min-width: 385px) {
 main#postContent {
             margin-top: 200px
-    }  
+    }
         }
 @media (min-width: 500px) {
 main#postContent {
@@ -183,6 +187,7 @@ main#postContent {
         }
 main#postContent p {
             margin-bottom: 20px;
+            color: var(--theme-p);
         }
 main#postContent ul {
             margin-left: 25px;
@@ -232,6 +237,7 @@ main p {
         margin-bottom: 7.5px;
     }
 main p.date {
+        color: var(--theme-p);
         margin-bottom: 25px;
     }
 main hr {
