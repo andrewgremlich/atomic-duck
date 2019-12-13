@@ -191,8 +191,15 @@ main#postContent p {
 main#postContent pre {
             padding: 10px;
             border-radius: 5px;
-            overflow-y: scroll;
+            overflow-x: scroll;
             margin-bottom: 20px;
+            width: 100%;
+        }
+main#postContent .highlight {
+            width: 100%;
+        }
+main#postContent code {
+            width: 100%;
         }
 main#postContent ul {
             margin-left: 25px;
@@ -217,7 +224,8 @@ main#postContent blockquote {
         }
 main#postContent article {
             margin-left: 10px;
-            margin-right: 10px
+            margin-right: 10px;
+            width: 90%
         }
 @media (min-width: 850px) {
 main#postContent article {
