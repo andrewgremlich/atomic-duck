@@ -20,6 +20,22 @@ main {
             color: var(--theme-p);
         }
 
+        & pre {
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: scroll;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        & .highlight {
+            width: 100%;
+        }
+
+        & code {
+            width: 100%;
+        }
+
         & ul {
             margin-left: 25px;
             margin-bottom: 25px;
@@ -49,6 +65,7 @@ main {
         & article {
             margin-left: 10px;
             margin-right: 10px;
+            width: 90%;
 
             @media (min-width: 850px) {
                 width: 40%;
