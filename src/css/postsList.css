@@ -1,15 +1,6 @@
 main {
     &#postsList {
         margin-bottom: 50px;    
-        margin-top: 50px;
-
-        @media (min-width: 385px) {
-            margin-top: 200px;  
-        }
-
-        @media (min-width: 500px) {
-            margin-top: 50px;
-        }
     }
 
     & p {

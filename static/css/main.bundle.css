@@ -223,18 +223,7 @@ main#postContent #profileImage {
         }
 main#postsList {
         margin-bottom: 50px;    
-        margin-top: 50px
     }
-@media (min-width: 385px) {
-main#postsList {
-            margin-top: 200px
-    }  
-        }
-@media (min-width: 500px) {
-main#postsList {
-            margin-top: 50px
-    }
-        }
 main p {
         margin-bottom: 7.5px;
     }
