@@ -53,7 +53,7 @@
     download.style.display = "none";
 
     // refer to /sw.js for cache name.
-    const APP_CACHE = caches.open("{{ .Site.Params.app_id }}-v1");
+    const APP_CACHE = caches.open("blog_cache");
 
     download.addEventListener("click", evt => {
         APP_CACHE.then(cache => {
