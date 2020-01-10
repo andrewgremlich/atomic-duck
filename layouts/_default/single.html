@@ -1,7 +1,13 @@
 {{ define "main"}}
     <main id="postContent">
         <article>
-            <h1>{{ .Title }}</h1>
+
+            <img
+                src="{{ .Site.BaseURL }}img/avatar.jpg"
+                alt="Avatar Image for {{ .Site.Author }}"
+                title="Avatar Image for {{ .Site.Author }}"
+                id="profileImage"
+            />
         
             <h3>
                 {{ if .Params.Author }}
@@ -10,6 +16,8 @@
                     {{ .Site.Params.Author }}
                 {{ end }}
             </h3>
+            
+            <h1>{{ .Title }}</h1>
         
             {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
             <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
