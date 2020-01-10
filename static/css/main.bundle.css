@@ -169,16 +169,6 @@ main#postContent {
         -webkit-box-align: center;
                 align-items: center
     }
-@media (min-width: 385px) {
-main#postContent {
-            margin-top: 200px
-    }
-        }
-@media (min-width: 500px) {
-main#postContent {
-            margin-top: 50px
-    }
-        }
 main#postContent p {
             margin-bottom: 20px;
             color: var(--theme-p);
