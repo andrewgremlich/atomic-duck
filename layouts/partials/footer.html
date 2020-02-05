@@ -1,11 +1,15 @@
 <footer>
     <p class="other-links">
-        <label>
-            <a href="/categories">Categories of Blog</a>
-        </label>
-        <label>
-            <a href="/tags">Tags of Blog</a>
-        </label>
+        {{ if .Site.Taxonomies.categories }}
+            <label>
+                <a href="/categories">Categories of Blog</a>
+            </label>
+        {{ end}}
+        {{ if .Site.Taxonomies.tags }}
+            <label>
+                <a href="/tags">Tags of Blog</a>
+            </label>
+        {{ end }}
     </p>
     <p class="other-links">
         {{ with .Site.Params.linkedin }}
