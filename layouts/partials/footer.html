@@ -42,6 +42,17 @@
     </p>
 </footer>
 
+{{ if .Site.Params.app_updater }}
+
+    <div id="appUpdater">
+        <label>
+            A new version is available. 
+            <input type="button" value="Update?" />
+        </label>
+    </div>
+
+{{ end }}
+
 {{ if .Site.Params.service_worker }}
     <script>
         if ("serviceWorker" in navigator) {

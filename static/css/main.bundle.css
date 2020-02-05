@@ -49,6 +49,24 @@ footer {
         padding-left: 50px
 }
     }
+
+#appUpdater {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--faded-black);
+    width: 100%;
+    padding: 10px
+}
+
+#appUpdater label {
+        font-size: 20px;
+        color: var(--theme-white);
+    }
+
+#appUpdater input {
+        font-size: 20px;
+    }
 * {
     box-sizing: border-box;
     margin: 0;
