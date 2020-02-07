@@ -9,6 +9,6 @@
 {{ $modOriginal := $original.Resize (printf "%s %s" $size $quality) }}
 
 <figure>
-    <img src="{{ $modOriginal.RelPermalink }}" title="{{ $descText }}" alt="{{ $descText }}" />
+    <img src="{{ $modOriginal.RelPermalink }}" loading="lazy" title="{{ $descText }}" alt="{{ $descText }}" />
     <figcaption>{{ $caption }}</figcaption>
 </figure>
