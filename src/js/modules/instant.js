@@ -11,44 +11,47 @@ const allowQueryString = 'instantAllowQueryString' in document.body.dataset
 const allowExternalLinks = 'instantAllowExternalLinks' in document.body.dataset
 const useWhitelist = 'instantWhitelist' in document.body.dataset
 
-let delayOnHover = 65
-let useMousedown = false
-let useMousedownOnly = false
-if ('instantIntensity' in document.body.dataset) {
-  if (document.body.dataset.instantIntensity.substr(0, 'mousedown'.length) == 'mousedown') {
-    useMousedown = true
-    if (document.body.dataset.instantIntensity == 'mousedown-only') {
-      useMousedownOnly = true
+function main() {
+    let delayOnHover = 65
+    let useMousedown = false
+    let useMousedownOnly = false
+    if ('instantIntensity' in document.body.dataset) {
+      if (document.body.dataset.instantIntensity.substr(0, 'mousedown'.length) == 'mousedown') {
+        useMousedown = true
+        if (document.body.dataset.instantIntensity == 'mousedown-only') {
+          useMousedownOnly = true
+        }
+      }
+      else {
+        const milliseconds = parseInt(document.body.dataset.instantIntensity)
+        if (milliseconds != NaN) {
+          delayOnHover = milliseconds
+        }
+      }
     }
-  }
-  else {
-    const milliseconds = parseInt(document.body.dataset.instantIntensity)
-    if (milliseconds != NaN) {
-      delayOnHover = milliseconds
+    
+    if (isSupported && !isDataSaverEnabled) {
+      prefetcher.rel = 'prefetch'
+      document.head.appendChild(prefetcher)
+    
+      const eventListenersOptions = {
+        capture: true,
+        passive: true,
+      }
+    
+      if (!useMousedownOnly) {
+        document.addEventListener('touchstart', touchstartListener, eventListenersOptions)
+      }
+    
+      if (!useMousedown) {
+        document.addEventListener('mouseover', mouseoverListener, eventListenersOptions)
+      }
+      else {
+        document.addEventListener('mousedown', mousedownListener, eventListenersOptions)
+      }
     }
-  }
 }
 
-if (isSupported && !isDataSaverEnabled) {
-  prefetcher.rel = 'prefetch'
-  document.head.appendChild(prefetcher)
-
-  const eventListenersOptions = {
-    capture: true,
-    passive: true,
-  }
-
-  if (!useMousedownOnly) {
-    document.addEventListener('touchstart', touchstartListener, eventListenersOptions)
-  }
-
-  if (!useMousedown) {
-    document.addEventListener('mouseover', mouseoverListener, eventListenersOptions)
-  }
-  else {
-    document.addEventListener('mousedown', mousedownListener, eventListenersOptions)
-  }
-}
 
 function touchstartListener(event) {
   /* Chrome on Android calls mouseover before touchcancel so `lastTouchTimestamp`
@@ -170,3 +173,5 @@ function preload(url) {
 function stopPreloading() {
   prefetcher.removeAttribute('href')
 }
+
+export default main;

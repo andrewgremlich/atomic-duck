@@ -35,7 +35,7 @@ main {
 
     & #searchResults {
         position: absolute;
-        background: #d8d8d8;
+        background: #353535;
         width: 100%;
         left: 0;
         border-radius: 10px;

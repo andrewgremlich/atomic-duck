@@ -1,29 +1,37 @@
 {
-  "name": "atomic-duck",
-  "version": "1.0.0",
-  "description": "A minimalist theme for Hugo SSG",
-  "main": "index.js",
-  "scripts": {
-    "build:css": "cat src/css/*.css | postcss --no-map > static/css/main.bundle.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andrewgremlich/atomic-duck.git"
-  },
-  "keywords": [],
-  "author": "Andrew Gremlich",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andrewgremlich/atomic-duck/issues"
-  },
-  "homepage": "https://github.com/andrewgremlich/atomic-duck#readme",
-  "dependencies": {
-    "husky": "^3.1.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.7.3",
-    "postcss-cli": "^6.1.3",
-    "postcss-preset-env": "^6.7.0",
-    "sugarss": "^2.0.0"
-  }
+    "name": "atomic-duck",
+    "version": "1.0.0",
+    "description": "A minimalist theme for Hugo SSG",
+    "main": "index.js",
+    "scripts": {
+        "build:css": "cat src/css/*.css | postcss --no-map > static/css/atomic-duck.bundle.css",
+        "build:js": "rollup --config",
+        "build": "npm run build:js; npm run build:css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andrewgremlich/atomic-duck.git"
+    },
+    "keywords": [],
+    "author": "Andrew Gremlich",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/andrewgremlich/atomic-duck/issues"
+    },
+    "homepage": "https://github.com/andrewgremlich/atomic-duck#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.8.4",
+        "@babel/preset-env": "^7.8.4",
+        "autoprefixer": "^9.7.4",
+        "babel-preset-minify": "^0.5.1",
+        "cssnano": "^4.1.10",
+        "husky": "^4.2.3",
+        "postcss-cli": "^7.1.0",
+        "postcss-preset-env": "^6.7.0",
+        "rollup": "^1.31.1",
+        "rollup-plugin-babel": "^4.3.3",
+        "sugarss": "^2.0.0"
+    }
 }

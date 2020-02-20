@@ -6,6 +6,9 @@ module.exports = {
                 "nesting-rules": true
             }
         }),
-        require("autoprefixer")
+        require("autoprefixer"),
+        require('cssnano')({
+            preset: 'default',
+        }),
     ]
 };
