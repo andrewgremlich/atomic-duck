@@ -55,14 +55,7 @@
 
 {{ if .Site.Params.service_worker }}
     <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker
-                .register("{{ .Site.Params.service_worker }}")
-                .then(registration => {
-                    console.log("service worker registered!");
-                })
-                .catch(err => console.error("SW failure...  :(", err));
-        }
+        if ("serviceWorker" in navigator) navigator.serviceWorker.register("{{ .Site.Params.service_worker }}");
     </script>
 {{ end }}
 
