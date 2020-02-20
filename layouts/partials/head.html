@@ -1,9 +1,11 @@
 <head>
     <title>
-        {{ if .Title }}
+        {{ if .IsPage }}
             {{ .Title }} | {{ .Site.Title }}
-        {{ else }}
+        {{ else if .IsHome }}
             {{ .Site.Title }}
+        {{ else }}
+            {{ .Title }}
         {{ end }}
     </title>
     <meta charset="utf-8">
@@ -12,6 +14,10 @@
         <meta name="description" content="{{ .Description }}">
     {{ else }}
         <meta name="description" content="{{ .Site.Params.description }}">
+    {{ end }}
+
+    {{ if .Keywords }}
+        <meta name="keywords" content="{{ delimit .Keywords ", " }}" />
     {{ end }}
 
     <meta name="robots" content="index, follow">

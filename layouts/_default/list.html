@@ -9,6 +9,12 @@
             </div>
         {{ end }}
 
+        {{ if .Content }} 
+            <div class="list-description">
+                {{ .Content }}
+            </div>
+        {{ end }}
+
         {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January, 2006"}}
         {{ range $index, $value := .Pages.GroupByDate $listPageDateFormat }}
             {{ if (ne $index 0) }}

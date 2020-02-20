@@ -24,6 +24,10 @@ main {
             width: 100%;
         }
 
+        & .small-text {
+            font-size: 14px;
+        }
+
         & code {
             width: 100%;
         }
