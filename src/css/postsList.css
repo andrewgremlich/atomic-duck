@@ -1,6 +1,7 @@
 main {
     &#postsList {
         margin-bottom: 50px;    
+        text-align: center;
     }
 
     & p {
