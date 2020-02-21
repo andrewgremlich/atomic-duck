@@ -1,17 +1,17 @@
 {{ define "main"}}
     <main id="postsList" class="flex-column-center">
 
+        {{ if .Content }} 
+            <div class="list-description">
+                {{ .Content }}
+            </div>
+        {{ end }}
+
         {{ if .Site.Params.useSearch }}
             <div id="searchArea">
                 <input type="search" id="searchBar" placeholder="Search for blog" />
                 <div id="searchResults">
                 </div>
-            </div>
-        {{ end }}
-
-        {{ if .Content }} 
-            <div class="list-description">
-                {{ .Content }}
             </div>
         {{ end }}
 
