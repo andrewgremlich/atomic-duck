@@ -20,4 +20,8 @@ header {
         box-shadow: var(--box-shadow);
         width: 100px;
     }
+
+    & .icons {
+        cursor: pointer;
+    }
 }
