@@ -8,11 +8,12 @@
         {{ end }}
 
         {{ if .Site.Params.useSearch }}
-            <div id="searchArea">
-                <input type="search" id="searchBar" placeholder="Search for blog" />
+            <label id="searchArea">
+                Search Blog Site
+                <input type="search" id="searchBar" />
                 <div id="searchResults">
                 </div>
-            </div>
+            </label>
         {{ end }}
 
         {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January, 2006"}}

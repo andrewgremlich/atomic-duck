@@ -1,37 +1,37 @@
 <footer>
     <p class="other-links">
         {{ if .Site.Taxonomies.categories }}
-            <label>
+            <span>
                 <a href="/categories">Categories of Blog</a>
-            </label>
+            </span>
         {{ end}}
         {{ if .Site.Taxonomies.tags }}
-            <label>
+            <span>
                 <a href="/tags">Tags of Blog</a>
-            </label>
+            </span>
         {{ end }}
     </p>
     <p class="other-links">
         {{ with .Site.Params.linkedin }}
-        <label>
+        <span>
             <a href="{{ . }}" rel="noopener">LinkedIn</a>
-        </label>
+        </span>
         {{ end }}
         {{ with .Site.Params.github }}
-        <label>
+        <span>
             <a href="{{ . }}" rel="noopener">Github</a>
-        </label>
+        </span>
         {{ end }}
         {{ with .Site.Params.twitter }}
-        <label>
+        <span>
             <a href="{{ . }}" rel="noopener">Twitter</a>
-        </label>
+        </span>
         {{ end }}
         {{ with .Site.Params.addtional_urls }}
             {{ range . }}
-                <label>
+                <span>
                     <a href="{{ .url }}" rel="noopener">{{ .name }}</a>
-                </label>
+                </span>
             {{ end }}
         {{ end }}
     </p>
