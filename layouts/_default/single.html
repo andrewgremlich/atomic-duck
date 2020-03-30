@@ -30,9 +30,16 @@
                 <p class="small-text">Readng time: {{ .ReadingTime }} minutes</p>
             {{ end }}
             
-            <section>
-                {{ .Content }}
-            </section>
+            {{ if .Site.Params.highlight }}
+                <section id="highlight-anchor">
+                    {{ .Content }}
+                </section>
+            {{ else }}
+                <section>
+                    {{ .Content }}
+                </section>
+            {{ end }}
+
         </article>
     </main>
 {{ end }}
