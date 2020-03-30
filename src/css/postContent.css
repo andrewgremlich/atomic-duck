@@ -65,6 +65,11 @@ main {
       }
     }
 
+    & #pageTurner {
+      display: flex;
+      justify-content: space-between;
+    }
+
     & article {
       margin-left: 10px;
       margin-right: 10px;

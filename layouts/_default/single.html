@@ -23,12 +23,14 @@
                 <p class="small-text">{{ .Description }}</p>
             {{ end }}
         
-            {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "January 2, 2006"}}
+            {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "2 January 2006"}}
             <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
 
             {{ if .ReadingTime }}
                 <p class="small-text">Readng time: {{ .ReadingTime }} minutes</p>
             {{ end }}
+
+            {{.TableOfContents}}
             
             {{ if .Site.Params.highlight }}
                 <section id="highlight-anchor">
@@ -38,6 +40,22 @@
                 <section>
                     {{ .Content }}
                 </section>
+            {{ end }}
+
+            {{ if .WordCount }}
+                <p class="small-text">Word Count: {{ .WordCount }}</p>
+            {{ end }}
+
+            {{ if .PrevInSection | or .NextInSection }}
+                <div id="pageTurner">
+                    {{if .PrevInSection}}
+                        <p><a class="small-text" href="{{.PrevInSection.Permalink}}">< {{.PrevInSection.Title}}</a></p>
+                    {{end}}
+
+                    {{if .NextInSection}}
+                        <p><a class="small-text" href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}} ></a></p>
+                    {{end}}
+                </div>
             {{ end }}
 
         </article>
