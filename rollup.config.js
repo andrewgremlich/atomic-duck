@@ -1,4 +1,4 @@
-import babel from "rollup-plugin-babel";
+import { terser } from "rollup-plugin-terser";
 
 const config = {
     input: "src/js/main.js",
@@ -8,7 +8,7 @@ const config = {
             format: "esm"
         }
     ],
-    plugins: [babel()]
+    plugins: [terser()]
 };
 
 export default config;
