@@ -34,12 +34,17 @@ main {
 
     & ul {
       margin-left: 25px;
-      margin-bottom: 25px;
       font-size: 14px;
     }
 
     & ul a {
       font-size: 14px;
+    }
+
+    & section {
+      & ul {
+        margin-bottom: 25px;
+      }
     }
 
     & figure {
