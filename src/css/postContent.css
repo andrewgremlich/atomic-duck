@@ -59,6 +59,10 @@ main {
       & img {
         width: 100%;
       }
+
+      & figcaption {
+        color: var(--theme-p);
+      }
     }
 
     & blockquote {
