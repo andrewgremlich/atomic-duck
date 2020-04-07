@@ -16,7 +16,7 @@
             </label>
         {{ end }}
 
-        {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January, 2006"}}
+        {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January 2006"}}
         {{ range $index, $value := .Pages.GroupByDate $listPageDateFormat }}
             {{ if (ne $index 0) }}
             <hr class="separator" />
