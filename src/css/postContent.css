@@ -12,6 +12,10 @@ main {
       color: var(--theme-p);
     }
 
+    & #TableOfContents {
+      margin-bottom: 20px;
+    }
+
     & pre {
       padding: 10px;
       border-radius: 5px;
