@@ -63,9 +63,14 @@ transition: all 2s;
 
     2. Note! This does **require** a service worker as listed in step 4.
 
-6. If you want to use the built in search with LunrJS, add into the `[params]` the option `useSearch = true`.
+6. If you want to use search features, and the following example section to your `config.toml` file.
 
-    1. Note! **You will need to create your own index file** and provide that in the `/static` folder and name it `search-index.json`.
+```toml
+[params.search]
+use = true
+searchServiceURL = "https://duckduckgo.com/"
+searchServiceName = "Duck"
+```
 
 7. There exists in this theme a JS library for the user to highlight selections they like in posts. To enable that option, add in `highlight = true` to the `[params]`.
 

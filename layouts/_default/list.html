@@ -1,25 +1,18 @@
 {{ define "main"}}
     <main id="postsList" class="flex-column-center">
 
-        {{/*  <form action="https://duckduckgo.com/">
-            <input type="text" name="q">
-            <input type="hidden" name="sites" value="gremlich.me">
-            <button type="submit">Search</button>
-        </form>  */}}
-
         {{ if .Content }} 
             <div class="list-description">
                 {{ .Content }}
             </div>
         {{ end }}
 
-        {{ if .Site.Params.useSearch }}
-            <label id="searchArea">
-                Search Blog Site
-                <input type="search" id="searchBar" />
-                <div id="searchResults">
-                </div>
-            </label>
+        {{ if .Site.Params.search.use }}
+            <form class="flex-column-center" id="searchArea" action="{{ .Site.Params.search.searchServiceURL }}">
+                <input type="text" name="q" id="searchBar">
+                <input type="hidden" name="sites" value="{{ .Site.BaseURL }}">
+                <button type="submit">Search with {{ .Site.Params.search.searchServiceName }}</button>
+            </form>
         {{ end }}
 
         {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January 2006"}}
@@ -35,10 +28,6 @@
             {{ end }}
         {{ end }}
 
-        {{ if .Site.Params.useSearch }}
-            <script src="https://unpkg.com/lunr/lunr.min.js"></script>
-        {{ end }}
-        
         <!-- Generate a list of posts so we can display them -->
         {{ $p := slice }}
         {{ range.Pages }}
@@ -46,65 +35,5 @@
             {{ $p = $p | append $post -}}
         {{ end }}
 
-        {{ if .Site.Params.useSearch }}
-            <script>
-                const posts = JSON.parse(
-                    {{ $p | jsonify }}
-                );
-
-                function debounce(func, wait, immediate) {
-                    var timeout;
-                    return function() {
-                        var context = this, args = arguments;
-                        var later = function() {
-                            timeout = null;
-                            if (!immediate) func.apply(context, args);
-                        };
-                        var callNow = immediate && !timeout;
-                        clearTimeout(timeout);
-                        timeout = setTimeout(later, wait);
-                        if (callNow) func.apply(context, args);
-                    };
-                };
-
-                const searchBar = document.getElementById("searchBar");
-                const searchResults = document.getElementById("searchResults");
-
-                const list = (async () => {
-                    const indexData = await fetch('/search-index.json');
-                    const indexJson = await indexData.json();
-
-                    const index = lunr.Index.load(indexJson);
-
-                    const onTypeSearch = debounce(function(evt) {
-                        let searchTerm = evt.target.value;
-                        let matchPosts = [];
-
-                        index.search(searchTerm).forEach(match => matchPosts.push(...posts.filter(post => post.title === match.ref)))
-
-                        searchResults.innerHTML = "";
-                        matchPosts.forEach(mpost => {
-                            const textNode = document.createElement("p");
-                            const anchorLink = document.createElement("a");
-                            const node = document.createTextNode(mpost.title);
-
-                            anchorLink.appendChild(node);
-                            anchorLink.href = mpost.link;
-
-                            textNode.appendChild(anchorLink);
-
-                            searchResults.appendChild(textNode);
-                        })
-
-                        if (searchTerm.trim().length < 1) {
-                            searchResults.innerHTML = "";
-                        }
-                    }, 800);
-
-                    searchBar.addEventListener("input", onTypeSearch);
-                })();
-
-            </script>
-        {{ end }}
     </main>
 {{ end }}
