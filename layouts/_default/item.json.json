@@ -1,0 +1,6 @@
+{
+  "name": "{{ .Title }}",
+  "description" : "{{ .Params.description }}",
+  "permalink" : "{{ .Permalink }}",
+  "date": "{{ .Params.date }}"
+}
