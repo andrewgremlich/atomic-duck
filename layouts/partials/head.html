@@ -51,14 +51,6 @@
         <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
-    {{ if .Site.Params.highlight }}
-        <style>
-            mark {
-                background: var(--theme-highlighter);
-            }
-        </style>
-    {{ end }}
-
     <!-- CSS -->
     <link rel="stylesheet" href="{{ .Site.BaseURL }}css/atomic-duck.bundle.css" />
   </head>

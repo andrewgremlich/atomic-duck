@@ -111,10 +111,6 @@
 <!-- JS -->
 <script src="{{ .Site.BaseURL }}js/atomic-duck.bundle.js"></script>
 
-{{ if .Site.Params.highlight }}
-    <script src="{{ .Site.BaseURL }}js/hughlighter.js"></script>
-{{ end }}
-
 <!-- custom js -->
 {{ range .Site.Params.custom_js -}}
     <script src="{{ . | absURL }}"></script>
