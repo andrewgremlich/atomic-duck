@@ -9,9 +9,12 @@
 
         {{ if .Site.Params.search.use }}
             <form class="flex-column-center" id="searchArea" action="{{ .Site.Params.search.searchServiceURL }}">
-                <input type="text" name="q" id="searchBar">
+                <label>
+                    Search {{ .Site.Params.search.searchServiceName }}
+                    <input type="text" name="q" id="searchBar">
+                </label>
                 <input type="hidden" name="sites" value="{{ .Site.BaseURL }}">
-                <button type="submit">Search with {{ .Site.Params.search.searchServiceName }}</button>
+                <button type="submit">Search</button>
             </form>
         {{ end }}
 

@@ -4,7 +4,7 @@
     "description": "A minimalist theme for Hugo SSG",
     "main": "index.js",
     "scripts": {
-        "build:css": "cat src/css/*.css | postcss --no-map > static/css/atomic-duck.bundle.css",
+        "build:css": "cat src/css/*.css | postcss --no-map > assets/css/atomic-duck.bundle.css",
         "build:js": "rollup --config",
         "build": "npm run build:js; npm run build:css"
     },

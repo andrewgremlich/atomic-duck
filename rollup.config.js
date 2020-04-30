@@ -4,7 +4,7 @@ const config = {
     input: "src/js/main.js",
     output: [
         {
-            file: "static/js/atomic-duck.bundle.js",
+            file: "assets/js/atomic-duck.bundle.js",
             format: "esm"
         }
     ],

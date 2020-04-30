@@ -1,14 +1,5 @@
 {{ define "main"}}
 
-    {{ if .Site.Params.highlight }}
-        <style>
-            mark {
-                background: var(--theme-highlighter);
-                color: var(--theme-p);
-            }
-        </style>
-    {{ end }}
-
     <main id="postContent">
         <article>
 
@@ -73,10 +64,5 @@
 
         </article>
     </main>
-
-    {{ if .Site.Params.highlight }}\
-        <script src="https://unpkg.com/mark.js@8.11.1/dist/mark.es6.min.js"></script>
-        <script src="{{ .Site.BaseURL }}js/hughlighter.js"></script>
-    {{ end }}
     
 {{ end }}

@@ -51,6 +51,21 @@
         <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/atomic-duck.bundle.css" />
+    {{ $css := resources.Get "css/vars.css" }}
+    {{ $css = $css | resources.PostCSS | resources.Minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+    {{ $css := resources.Get "css/atomic-duck.bundle.css" }}
+    {{ $css = $css | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+    {{ if .Site.Params.highlight }}
+        <style>
+            mark {
+                background: var(--theme-highlighter);
+                color: var(--theme-p);
+            }
+        </style>
+    {{ end }}
+
   </head>
