@@ -27,22 +27,7 @@
         {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "2 January 2006"}}
         <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
 
-            {{ if and (gt .WordCount 500) (.Params.toc) }}
-                <h3>Table of Contents</h3>
-                {{.TableOfContents}}
-            {{ end }}
-            
-            {{ if .Site.Params.highlight }}
-                <section id="highlight-anchor">
-                    {{ .Content }}
-                </section>
-            {{ else }}
-                <section>
-                    {{ .Content }}
-                </section>
-            {{ end }}
-
-        {{ if gt .WordCount 500 }}
+        {{ if and (gt .WordCount 500) (.Params.toc) }}
             <h3>Table of Contents</h3>
             {{.TableOfContents}}
         {{ end }}
