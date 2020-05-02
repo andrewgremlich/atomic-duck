@@ -1,6 +1,6 @@
 {
   "name": "{{ .Title }}",
   "description" : "{{ .Params.description }}",
-  "permalink" : "{{ .Permalink }}",
+  "relPermalink" : "{{ .RelPermalink }}",
   "date": "{{ .Params.date }}"
 }

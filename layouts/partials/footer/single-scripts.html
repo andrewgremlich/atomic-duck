@@ -1,0 +1,9 @@
+{{ if .Site.Params.highlight }}
+
+<script src="https://unpkg.com/mark.js@8.11.1/dist/mark.es6.min.js"></script>
+
+{{ $hughlighter := resources.Get "js/hughlighter.js" }}
+{{ $hughlighter = $hughlighter | fingerprint }}
+<script src="{{ $hughlighter.RelPermalink }}"></script>
+
+{{ end }}

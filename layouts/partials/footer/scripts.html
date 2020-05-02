@@ -1,0 +1,30 @@
+{{ if .Site.Params.service_worker }}
+  <script>
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("{{ .Site.Params.service_worker }}");
+  </script>
+{{ end }}
+
+{{ if .Site.Params.theming }}
+
+  {{ $themeChanger := resources.Get "js/theme-changer.js" }}
+  {{ $themeChanger = $themeChanger | minify | fingerprint }}
+  <script src="{{ $themeChanger.RelPermalink }}"></script>
+
+{{ end }}
+
+{{ if .Site.Params.downloader }}
+
+  {{ $downloader := resources.Get "js/downloader.js" }}
+  {{ $downloader = $downloader | minify | fingerprint }}
+  <script src="{{ $downloader.RelPermalink }}"></script>
+
+{{ end }}
+
+{{ $atomicDuckTheme := resources.Get "js/atomic-duck.bundle.js" }}
+{{ $atomicDuckTheme = $atomicDuckTheme | fingerprint }}
+<script src="{{ $atomicDuckTheme.RelPermalink }}"></script>
+
+<!-- custom js -->
+{{ range .Site.Params.custom_js -}}
+  <script src="{{ . | absURL }}"></script>
+{{- end }}

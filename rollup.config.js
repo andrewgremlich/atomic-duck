@@ -1,14 +1,26 @@
 import { terser } from "rollup-plugin-terser";
 
-const config = {
+const config = [
+  {
     input: "src/js/main.js",
     output: [
-        {
-            file: "assets/js/atomic-duck.bundle.js",
-            format: "esm"
-        }
+      {
+        file: "assets/js/atomic-duck.bundle.js",
+        format: "iife",
+      },
     ],
-    plugins: [terser()]
-};
+    plugins: [terser()],
+  },
+  {
+    input: "src/js/search-widget.js",
+    output: [
+      {
+        file: "assets/js/search-site.bundle.js",
+        format: "iife",
+      },
+    ],
+    plugins: [terser()],
+  },
+];
 
 export default config;

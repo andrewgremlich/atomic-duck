@@ -1,58 +1,85 @@
 main {
-    &#postsList {
-        margin-bottom: 50px;    
-        text-align: center;
+  &#postsList {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  & p {
+    margin-bottom: 7.5px;
+  }
+
+  & p.date {
+    color: var(--theme-p);
+    margin-bottom: 25px;
+  }
+
+  & hr {
+    width: 20%;
+    margin: 40px;
+    border: 1px solid var(--faded-black);
+  }
+
+  & #searchContainer {
+    margin-bottom: 50px;
+    color: var(--theme-p);
+    position: relative;
+
+    & > * {
+      display: block;
     }
 
-    & p {
-        margin-bottom: 7.5px;
-    }
-
-    & p.date {
-        color: var(--theme-p);
-        margin-bottom: 25px;
-    }
-
-    & hr {
-        width: 20%;
-        margin: 40px;
-        border: 1px solid var(--faded-black);
-    }
-
-    & #searchArea {
-        margin-bottom: 50px;
-        color: var(--theme-p);
-
-        & > * {
-            display: block;
-        }
-
-        & button {
-            background: var(--theme-first-color);
-            color: var(--theme-black);
-            border: none;
-            padding: 5px;
-            font-size: 15px;
-            border-radius: 5px;
-            margin-top: 5px;
-            cursor: pointer;
-        }
+    & button {
+      background: var(--theme-first-color);
+      color: var(--theme-black);
+      border: none;
+      padding: 5px;
+      font-size: 15px;
+      border-radius: 5px;
+      margin-top: 5px;
+      cursor: pointer;
     }
 
     & #searchBar {
-        background: var(--theme-white);
-        font-size: 20px;
-        width: 300px;
-        height: 30px;
-        padding: 10px;
-        appearance: none;
-        border: 1px solid var(--theme-black);
-        border-radius: 10px;
+      background: var(--theme-white);
+      font-size: 20px;
+      width: 300px;
+      height: 30px;
+      padding: 10px;
+      appearance: none;
+      border: 1px solid var(--theme-black);
+      border-radius: 10px;
     }
 
-    & .list-description {
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 50px;
+    & #searchResultsPreview {
+      width: 100%;
+      background: var(--theme-black);
+      position: absolute;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 2s linear;
+
+      &.appear {
+        opacity: 1;
+      }
+
+      & .small-text {
+        font-size: 14px;
+      }
+
+      & div {
+        margin: 15px 0px 30px;
+
+        & p {
+          cursor: pointer;
+          margin: 2px;
+        }
+      }
     }
+  }
+
+  & .list-description {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
 }

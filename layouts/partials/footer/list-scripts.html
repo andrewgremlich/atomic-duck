@@ -1,0 +1,7 @@
+{{ if .Site.Params.search.use }}
+
+{{ $searchSite := resources.Get "js/search-site.bundle.js" }}
+{{ $searchSite = $searchSite | minify | fingerprint }}
+<script src="{{ $searchSite.RelPermalink }}"></script>
+
+{{ end }}

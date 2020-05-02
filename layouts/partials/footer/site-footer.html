@@ -1,0 +1,54 @@
+<footer>
+  <p class="other-links">
+      {{ if .Site.Taxonomies.categories }}
+          <span>
+              <a href="/categories">Categories of Blog</a>
+          </span>
+      {{ end}}
+      {{ if .Site.Taxonomies.tags }}
+          <span>
+              <a href="/tags">Tags of Blog</a>
+          </span>
+      {{ end }}
+  </p>
+  <p class="other-links">
+      {{ with .Site.Params.linkedin }}
+      <span>
+          <a href="{{ . }}" rel="noopener">LinkedIn</a>
+      </span>
+      {{ end }}
+      {{ with .Site.Params.github }}
+      <span>
+          <a href="{{ . }}" rel="noopener">Github</a>
+      </span>
+      {{ end }}
+      {{ with .Site.Params.twitter }}
+      <span>
+          <a href="{{ . }}" rel="noopener">Twitter</a>
+      </span>
+      {{ end }}
+      {{ with .Site.Params.addtional_urls }}
+          {{ range . }}
+              <span>
+                  <a href="{{ .url }}" rel="noopener">{{ .name }}</a>
+              </span>
+          {{ end }}
+      {{ end }}
+  </p>
+  <p>Subscribe via <a href="/index.xml">RSS</a>!</p>
+  <p>
+      Made by {{ .Site.Params.Author }}. Powered by
+      <a href="https://gohugo.io/">Hugo</a>.
+  </p>
+</footer>
+
+{{ if .Site.Params.app_updater }}
+
+  <div id="appUpdater">
+      <label>
+          A new version is available. 
+          <input type="button" value="Update?" />
+      </label>
+  </div>
+
+{{ end }}

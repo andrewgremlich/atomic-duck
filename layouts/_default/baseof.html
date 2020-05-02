@@ -11,7 +11,8 @@
         {{ end }}
 
         {{ block "footer" . }}
-            {{ partial "footer.html" . }}
+            {{ partial "footer/site-footer.html" . }}
+            {{ partial "footer/scripts.html" . }}
         {{ end }}
     </body>
 </html>
