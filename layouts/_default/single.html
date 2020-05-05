@@ -31,6 +31,10 @@
             <p class="small-text">Readng time: {{ .ReadingTime }} minutes</p>
         {{ end }}
 
+        {{ if .WordCount }}
+            <p class="small-text">Word Count: {{ .WordCount }}</p>
+        {{ end }}
+
         {{ if and (gt .WordCount 500) (.Params.toc) }}
             <h3>Table of Contents</h3>
             {{.TableOfContents}}
@@ -44,10 +48,6 @@
             <section>
                 {{ .Content }}
             </section>
-        {{ end }}
-
-        {{ if .WordCount }}
-            <p class="small-text">Word Count: {{ .WordCount }}</p>
         {{ end }}
 
         {{ if .PrevInSection | or .NextInSection }}

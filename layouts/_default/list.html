@@ -9,11 +9,11 @@
     {{ end }}
 
     {{ if .Site.Params.search.use }}
-    <div id="searchContainer">
+    <div id="searchContainer" tabindex="0">
         <div class="flex-column-center" id="searchArea">
             <label>
                 Search site
-                <input type="search" name="q" id="searchBar">
+                <input type="search" name="q" id="searchBar" autocomplete="off">
             </label>
             <input type="hidden" name="sites" value="{{ .Site.BaseURL }}">
         </div>

@@ -63,13 +63,28 @@ const dispenseSearchResults = (searchCandidates) => {
       });
 
       dispenseSearchResults(searchCandidates);
-    } else {
+    } else if (searchResultsPreview.children.length) {
       searchResultsPreview.innerHTML = "";
       searchContainer.removeChild(searchResultsPreview);
     }
-  }, 1000);
+  }, 500);
 
-  searchBar.addEventListener("keydown", debounceKeyDown);
+  searchBar.addEventListener("keyup", debounceKeyDown);
+  searchBar.addEventListener("click", debounceKeyDown);
+
+  searchBar.addEventListener(
+    "search",
+    () => (searchResultsPreview.innerHTML = "")
+  );
+
+  document.addEventListener("click", (evt) => {
+    if (
+      searchResultsPreview.children.length &&
+      !evt.target.closest("#searchContainer")
+    ) {
+      searchResultsPreview.innerHTML = "";
+    }
+  });
 
   searchArea.addEventListener("submit", (evt) => evt.preventDefault());
 })();
