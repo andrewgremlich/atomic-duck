@@ -24,6 +24,11 @@ main {
       width: 100%;
     }
 
+    & img {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+
     & .highlight {
       width: 100%;
     }
