@@ -20,7 +20,7 @@
 
 {{ end }}
 
-{{ $atomicDuckTheme := resources.Get "js/atomic-duck.bundle.js" }}
+{{ $atomicDuckTheme := resources.Get "js/main.js" }}
 {{ $atomicDuckTheme = $atomicDuckTheme | fingerprint }}
 <script src="{{ $atomicDuckTheme.RelPermalink }}"></script>
 

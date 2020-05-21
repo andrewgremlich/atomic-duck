@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "build:css": "cat src/css/*.css | postcss --no-map > assets/css/atomic-duck.bundle.css",
-        "build:js": "rollup --config",
+        "build:js": "npm run build:main; npm run build:search-site",
+        "build:search-site": "esbuild --bundle src/js/search-widget.js --outdir=assets/js --minify",
+        "build:main": "esbuild --bundle src/js/main.js --outdir=assets/js --minify",
         "build": "npm run build:js; npm run build:css"
     },
     "repository": {
@@ -21,13 +23,11 @@
     "homepage": "https://github.com/andrewgremlich/atomic-duck#readme",
     "dependencies": {},
     "devDependencies": {
-        "autoprefixer": "^9.7.6",
+        "autoprefixer": "^9.8.0",
         "cssnano": "^4.1.10",
+        "esbuild": "^0.3.6",
         "husky": "^4.2.5",
         "postcss-cli": "^7.1.1",
-        "postcss-preset-env": "^6.7.0",
-        "rollup": "^2.7.6",
-        "rollup-plugin-terser": "^5.3.0",
-        "sugarss": "^2.0.0"
+        "postcss-preset-env": "^6.7.0"
     }
 }
