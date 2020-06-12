@@ -1,0 +1,8 @@
+{{ $imageFilePath := .Get "internetsource" }}
+{{ $descText := .Get "desc" }}
+{{ $caption := .Get "caption" }}
+
+<figure class="internetimage">
+    <img src="{{ $imageFilePath }}" loading="lazy" title="{{ $descText }}" alt="{{ $descText }}" />
+    <figcaption>{{ $caption }}</figcaption>
+</figure>
