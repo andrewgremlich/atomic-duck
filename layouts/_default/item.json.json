@@ -2,5 +2,7 @@
   "name": "{{ .Title }}",
   "description" : "{{ .Params.description }}",
   "relPermalink" : "{{ .RelPermalink }}",
-  "date": "{{ .Params.date }}"
+  "date": "{{ .Params.date }}",
+  "wordCount": "{{ .WordCount }}",
+  "readingTime": "{{ .ReadingTime }}"
 }
