@@ -3,7 +3,7 @@
 <script src="https://unpkg.com/mark.js@8.11.1/dist/mark.es6.min.js"></script>
 
 {{ $hughlighter := resources.Get "js/hughlighter.js" }}
-{{ $hughlighter = $hughlighter | fingerprint }}
+{{ $hughlighter = $hughlighter | fingerprint "md5" }}
 <script src="{{ $hughlighter.RelPermalink }}"></script>
 
 {{ end }}
@@ -11,7 +11,7 @@
 {{ if .Site.Params.analytics.use }}
 
 {{ $searchSite := resources.Get "js/analytics.js" }}
-{{ $searchSite = $searchSite | fingerprint }}
+{{ $searchSite = $searchSite | fingerprint "md5" }}
 <script src="{{ $searchSite.RelPermalink }}"></script>
 <script>
   const main = async () => {

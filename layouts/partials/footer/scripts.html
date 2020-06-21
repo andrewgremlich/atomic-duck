@@ -7,7 +7,7 @@
 {{ if .Site.Params.theming }}
 
   {{ $themeChanger := resources.Get "js/theme-changer.js" }}
-  {{ $themeChanger = $themeChanger | minify | fingerprint }}
+  {{ $themeChanger = $themeChanger | minify | fingerprint "md5" }}
   <script src="{{ $themeChanger.RelPermalink }}"></script>
 
 {{ end }}
@@ -15,13 +15,13 @@
 {{ if .Site.Params.downloader }}
 
   {{ $downloader := resources.Get "js/downloader.js" }}
-  {{ $downloader = $downloader | minify | fingerprint }}
+  {{ $downloader = $downloader | minify | fingerprint "md5" }}
   <script src="{{ $downloader.RelPermalink }}"></script>
 
 {{ end }}
 
 {{ $atomicDuckTheme := resources.Get "js/main.js" }}
-{{ $atomicDuckTheme = $atomicDuckTheme | fingerprint }}
+{{ $atomicDuckTheme = $atomicDuckTheme | fingerprint "md5" }}
 <script src="{{ $atomicDuckTheme.RelPermalink }}"></script>
 
 <!-- custom js -->

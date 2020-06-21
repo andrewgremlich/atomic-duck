@@ -1,7 +1,7 @@
 {{ if .Site.Params.search.use }}
 
 {{ $searchSite := resources.Get "js/search-widget.js" }}
-{{ $searchSite = $searchSite | minify | fingerprint }}
+{{ $searchSite = $searchSite | minify | fingerprint "md5" }}
 <script src="{{ $searchSite.RelPermalink }}"></script>
 
 {{ end }}

@@ -52,11 +52,11 @@
     {{- end }}
 
     {{ $css := resources.Get "css/vars.css" }}
-    {{ $css = $css | resources.PostCSS | resources.Minify | fingerprint }}
+    {{ $css = $css | resources.PostCSS | resources.Minify | fingerprint "md5" }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
     {{ $css := resources.Get "css/atomic-duck.bundle.css" }}
-    {{ $css = $css | fingerprint }}
+    {{ $css = $css | fingerprint "md5" }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
     {{ if .Site.Params.highlight }}
