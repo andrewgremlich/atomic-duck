@@ -1,22 +1,38 @@
 main {
-  &#postsList {
-    margin-bottom: 50px;
-    text-align: center;
+  padding: 10px;
+  
+  & #postsList {
+    margin: 0px 50px 50px 50px;
+    width: 100%;
+
+    @media (min-width: 850px) {
+      width: 50%;
+    }
   }
 
   & p {
     margin-bottom: 7.5px;
   }
 
-  & p.date {
-    color: var(--theme-p);
-    margin-bottom: 25px;
+  & .width-100 {
+    width: 100%;
   }
 
-  & hr {
-    width: 20%;
-    margin: 40px;
-    border: 1px solid var(--faded-black);
+  & .two-col-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  & .p-child-of-grid-end {
+    justify-self: end;
+
+    @media (min-width: 400px) {
+      width: 50%;
+    }
+  }
+
+  & .no-wrap {
+    white-space: nowrap;
   }
 
   & #searchContainer {
@@ -78,7 +94,6 @@ main {
   }
 
   & .list-description {
-    text-align: center;
     margin-top: 30px;
     margin-bottom: 50px;
   }

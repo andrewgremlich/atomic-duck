@@ -60,11 +60,11 @@ main {
       margin-bottom: 20px;
       max-width: 600px;
 
-      & img {
+      & > img {
         width: 100%;
       }
 
-      & figcaption {
+      & > figcaption {
         color: var(--theme-p);
       }
     }
