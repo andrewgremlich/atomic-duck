@@ -31,10 +31,10 @@
                 {{ $dateToShow := .Key }}
                 
                 {{ range.Pages }}
-                    <p class="no-wrap">
+                    <p>
                         <a href="{{ .Permalink }}">{{ .Title }}</a>
                     </p>
-                    <p class="no-wrap p-child-of-grid-end">
+                    <p class="p-child-of-grid-end">
                         {{ $dateToShow }}
                     </p>
                 {{ end }}

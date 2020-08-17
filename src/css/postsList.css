@@ -1,6 +1,6 @@
 main {
   padding: 10px;
-  
+
   & #postsList {
     margin: 0px 50px 50px 50px;
     width: 100%;
@@ -20,19 +20,30 @@ main {
 
   & .two-col-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    grid-template-columns: 60% 40%;
+
+    & p,
+    & a {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 850px) {
+      grid-template-columns: 50% 50%;
+
+      & p,
+      & a {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
   }
 
   & .p-child-of-grid-end {
     justify-self: end;
-
-    @media (min-width: 400px) {
-      width: 50%;
-    }
-  }
-
-  & .no-wrap {
-    white-space: nowrap;
+    text-align: right;
+    width: 100%;
   }
 
   & #searchContainer {
