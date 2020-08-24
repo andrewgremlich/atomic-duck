@@ -101,5 +101,18 @@ main {
       width: 100px;
       border-radius: 25px;
     }
+
+    & #blogMetadata {
+      border: 1px solid var(--faded-black);
+      border-radius: 5%;
+      display: flex;
+      padding: 10px;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      & img {
+        padding: 10px 20px 10px 10px;
+      }
+    }
   }
 }

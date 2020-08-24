@@ -2,37 +2,11 @@
 
 <main id="postContent">
     <article>
-
-        <img
-            src="{{ .Site.BaseURL }}img/avatar.jpg"
-            alt="Avatar Image for {{ .Site.Author }}"
-            title="Avatar Image for {{ .Site.Author }}"
-            id="profileImage"
-        />
-    
-        <h3>
-            {{ if .Params.Author }}
-                {{ .Params.Author }}
-            {{else}}
-                {{ .Site.Params.Author }}
-            {{ end }}
-        </h3>
         
         <h1>{{ .Title }}</h1>
 
         {{ if .Description }}
             <p class="small-text">{{ .Description }}</p>
-        {{ end }}
-    
-        {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "2 January 2006"}}
-        <p class="date">{{ .Date.Format $singlePageDateFormat }}</p>
-
-        {{ if .ReadingTime }}
-            <p class="small-text">Readng time: {{ .ReadingTime }} minutes</p>
-        {{ end }}
-
-        {{ if .WordCount }}
-            <p class="small-text">Word Count: {{ .WordCount }}</p>
         {{ end }}
 
         {{ if and (gt .WordCount 500) (.Params.toc) }}
@@ -61,6 +35,35 @@
                 {{end}}
             </div>
         {{ end }}
+
+        <div id="blogMetadata">
+            {{ if .Params.customAvatar }}
+                <p>Guest Writer</p>
+            {{ else }}
+                <img
+                    src="{{ .Site.BaseURL }}img/avatar.jpg"
+                    alt="Avatar Image for {{ .Site.Params.Author }}"
+                    title="Avatar Image for {{ .Site.Params.Author }}"
+                    id="profileImage"
+                />
+            {{ end }}
+
+            <div>
+                <p>{{ .Site.Params.Author }}</p>
+
+                {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "2 January 2006"}}
+                <p class="small-text">{{ .Date.Format $singlePageDateFormat }}</p>
+    
+                {{ if .ReadingTime }}
+                    <p class="small-text">Readng time: {{ .ReadingTime }} minutes</p>
+                {{ end }}
+    
+                {{ if .WordCount }}
+                    <p class="small-text">Word Count: {{ .WordCount }}</p>
+                {{ end }}
+            </div>
+        
+        </div>
 
     </article>
 </main>
