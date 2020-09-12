@@ -6,16 +6,16 @@
 
 {{ if .Site.Params.theming }}
 
-  {{ $themeChanger := resources.Get "js/theme-changer.js" }}
-  {{ $themeChanger = $themeChanger | minify | fingerprint "md5" }}
+  {{ $themeChanger := resources.Get "js/theme-changer.ts" | js.Build }}
+  {{ $themeChanger = $themeChanger | fingerprint "md5" }}
   <script src="{{ $themeChanger.RelPermalink }}"></script>
 
 {{ end }}
 
 {{ if .Site.Params.downloader }}
 
-  {{ $downloader := resources.Get "js/downloader.js" }}
-  {{ $downloader = $downloader | minify | fingerprint "md5" }}
+  {{ $downloader := resources.Get "js/downloader.ts" | js.Build  }}
+  {{ $downloader = $downloader | fingerprint "md5" }}
   <script src="{{ $downloader.RelPermalink }}"></script>
 
 {{ end }}

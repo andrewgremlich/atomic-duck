@@ -1,5 +1,4 @@
-const trash = document.querySelector(".trash");
-const download = document.querySelector(".download");
+import { trash, download } from "./mod/elements";
 
 trash.style.display = "none";
 download.style.display = "none";
