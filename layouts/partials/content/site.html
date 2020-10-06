@@ -1,0 +1,12 @@
+   
+<div id="site-content">
+
+  <h3>Content</h3>
+    
+  {{ range.Pages }}
+      <p>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </p>
+  {{ end }}
+  
+</div> 

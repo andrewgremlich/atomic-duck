@@ -22,23 +22,15 @@
             </div>
         {{ end }}
     
-        {{ $listPageDateFormat := .Site.Params.listPageDateFormat | default "January 2006"}}
-    
         <div class="two-col-grid width-100">
-        
-            {{ range $index, $value := .Pages.GroupByDate $listPageDateFormat }}
-    
-                {{ $dateToShow := .Key }}
                 
-                {{ range.Pages }}
-                    <p>
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    </p>
-                    <p class="p-child-of-grid-end">
-                        {{ $dateToShow }}
-                    </p>
-                {{ end }}
-    
+            {{ range.Pages }}
+                <p>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </p>
+                <p class="p-child-of-grid-end">
+                    {{ .Date.Format "2 Jan 2006" }}
+                </p>
             {{ end }}
     
         </div>    

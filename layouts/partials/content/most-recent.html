@@ -1,0 +1,11 @@
+<div id="most-recent">
+
+  <h3>Recent</h3>
+
+  {{ range first 10 .Site.RegularPages }}
+    <p>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </p>
+  {{ end }}
+
+</div>

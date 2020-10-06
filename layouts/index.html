@@ -1,5 +1,13 @@
 {{ define "main" }}
 <main id="homepage" class="flex-column-center">
-    {{.Content}}
+
+    <div>      
+        <div id="homepage-content">{{.Content}}</div>
+
+        {{ partial "content/most-recent.html" . }}
+
+        {{ partial "content/site.html" . }}
+    
+    </div>
 </main>
 {{ end }}
