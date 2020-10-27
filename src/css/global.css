@@ -32,7 +32,7 @@ h2 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 p,
@@ -42,7 +42,7 @@ pre {
 }
 
 a {
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   &:link {
     color: var(--theme-second-color);

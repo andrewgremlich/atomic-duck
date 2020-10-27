@@ -1,6 +1,6 @@
 main#homepage {
   width: 100vw;
-  height: 100vh;
+  margin: 20px 0px;
 
   & > div {
     width: 90vw;
