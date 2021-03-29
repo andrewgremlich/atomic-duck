@@ -11,6 +11,8 @@ const searchBar = document.getElementById("searchBar");
 const searchResultsPreview = document.createElement("aside");
 searchResultsPreview.id = "searchResultsPreview";
 
+searchResultsPreview.style.display = "none";
+
 const dispenseSearchResults = (searchCandidates) => {
   searchResultsPreview.innerHTML = "";
 
@@ -62,6 +64,7 @@ const dispenseSearchResults = (searchCandidates) => {
         if (post.name.toLowerCase().includes(searchTerm)) return true;
       });
 
+      searchResultsPreview.style.display = "block";
       dispenseSearchResults(searchCandidates);
     } else if (searchResultsPreview.children.length) {
       searchResultsPreview.innerHTML = "";

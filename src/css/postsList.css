@@ -78,12 +78,13 @@ main {
     }
 
     & #searchResultsPreview {
-      width: 100%;
+      width: 300px;
       background: var(--theme-black);
       position: absolute;
       border-radius: 15px;
       opacity: 0;
       transition: opacity 2s linear;
+      padding: 10px;
 
       &.appear {
         opacity: 1;

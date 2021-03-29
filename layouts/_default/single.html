@@ -49,7 +49,9 @@
             {{ end }}
 
             <div>
-                <p>{{ .Site.Params.Author }}</p>
+                <h2>About this post</h2>
+
+                <p class="small-text">Writer: {{ .Site.Params.Author }}</p>
 
                 {{ $singlePageDateFormat := .Site.Params.singlePageDateFormat | default "2 January 2006"}}
                 <p class="small-text">{{ .Date.Format $singlePageDateFormat }}</p>
@@ -61,6 +63,21 @@
                 {{ if .WordCount }}
                     <p class="small-text">Word Count: {{ .WordCount }}</p>
                 {{ end }}
+
+                <div id="metadataLinks">
+                    <h3>categories</h3>
+                    <ul>
+                        {{ range (.GetTerms "categories") }}
+                            <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                        {{ end }}
+                    </ul>
+                    <h3>tags</h3>
+                    <ul>
+                        {{ range (.GetTerms "tags") }}
+                            <li><a href="{{ .Permalink }}">#{{ .LinkTitle }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
             </div>
         
         </div>
