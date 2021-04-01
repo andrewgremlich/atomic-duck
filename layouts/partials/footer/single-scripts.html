@@ -7,21 +7,3 @@
 <script src="{{ $hughlighter.RelPermalink }}"></script>
 
 {{ end }}
-
-{{ if .Site.Params.analytics.use }}
-
-{{ $searchSite := resources.Get "js/analytics.js" }}
-{{ $searchSite = $searchSite | fingerprint "md5" }}
-<script src="{{ $searchSite.RelPermalink }}"></script>
-<script>
-  const main = async () => {
-    const siteId = "{{ .Site.Params.analytics.id }}";
-    const options = { delay: 1000 };
-  
-    await liteAnalytics(siteId, options)
-  }
-
-  main();
-</script>
-
-{{ end }}
