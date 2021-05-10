@@ -1,5 +1,5 @@
 #siteNav {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -16,13 +16,13 @@
     }
   }
 
-  img {
+  & img {
     border-radius: 100px;
     box-shadow: var(--box-shadow);
     width: 100px;
   }
 
-  .icons {
+  & .icons {
     cursor: pointer;
   }
 }

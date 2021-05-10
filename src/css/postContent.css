@@ -7,6 +7,12 @@ main {
     flex-direction: column;
     align-items: center;
 
+    & hr {
+      margin-top: 35px;
+      margin-bottom: 40px;
+      color: var(--faded-black);
+    }
+
     & p {
       margin-bottom: 20px;
       color: var(--theme-p);
@@ -105,15 +111,14 @@ main {
     }
 
     & #blogMetadata {
-      border: 1px solid var(--faded-black);
-      border-radius: 5%;
+      border-top: 1px solid var(--faded-black);
       display: flex;
       padding: 10px;
       justify-content: flex-start;
       align-items: flex-start;
 
       & img {
-        padding: 10px 20px 10px 10px;
+        padding: 5px 20px 10px 10px;
       }
 
       & h2 {
