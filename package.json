@@ -22,9 +22,9 @@
     },
     "homepage": "https://github.com/andrewgremlich/atomic-duck#readme",
     "devDependencies": {
-        "autoprefixer": "^10.2.3",
-        "cssnano": "^5.0.1",
-        "esbuild": "^0.11.15",
+        "autoprefixer": "^10.3.1",
+        "cssnano": "^5.0.6",
+        "esbuild": "^0.12.15",
         "husky": "^6.0.0",
         "postcss-cli": "^8.3.1",
         "postcss-preset-env": "^6.7.0"
